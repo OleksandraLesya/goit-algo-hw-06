@@ -59,51 +59,46 @@ from HW6.assistant_bot.address_book import AddressBook
 from HW6.assistant_bot.fields import Name, Phone # Including these for completeness of example
 
 # Create a new address book
-
 book = AddressBook()
 
 # Create a contact for John
-
 john_record = Record("John")
 john_record.add_phone("1234567890")
 john_record.add_phone("5555555555")
 book.add_record(john_record)
 
 # Create and add another contact
-
 jane_record = Record("Jane")
 jane_record.add_phone("9876543210")
 book.add_record(jane_record)
 
 # Print all contacts
-
 print("\n--- All contacts ---") # Added for clearer output in example
 print(book)
 
 # Edit a phone number for John
-
 john = book.find("John")
 if john: # Added check as find can return None
-try:
-john.edit_phone("1234567890", "1112223333")
-print("\n--- John's record after editing ---") # Added for clearer output
-print(john)
-except ValueError as e:
-print(f"Error editing John's phone: {e}")
+    try:
+        john.edit_phone("1234567890", "1112223333")
+        print("\n--- John's record after editing ---") # Added for clearer output
+        print(john)
+    except ValueError as e:
+        print(f"Error editing John's phone: {e}")
 else:
-print("John not found.")
+    print("John not found.")
+
 
 # Find a phone
-
 if john: # Added check as john might be None
-found_phone = john.find_phone("5555555555")
-print(f"\n--- Found phone for John ---") # Added for clearer output
-print(f"{john.name}: {found_phone}")
+    found_phone = john.find_phone("5555555555")
+    print(f"\n--- Found phone for John ---") # Added for clearer output
+    print(f"{john.name}: {found_phone}")
 else:
-print("John's record not available for phone search.")
+    print("John's record not available for phone search.")
+
 
 # Delete Jane's record
-
 book.delete("Jane")
 print("\n--- After deleting Jane ---") # Added for clearer output
 print(book)
