@@ -1,0 +1,39 @@
+# Python bytecode
+__pycache__/
+*.pyc
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# IDE specific files
+.vscode/
+.idea/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
+
+# Jupyter Notebooks checkpoints (if any)
+.ipynb_checkpoints/
+
+# Environment config files
+.env
+*.env
+
+# Compiled C extensions
+*.so
+
+# Coverage reports
+htmlcov/
+.coverage
+*.cover
+coverage.xml
+
+# Test results
+test-output/
+.pytest_cache/
